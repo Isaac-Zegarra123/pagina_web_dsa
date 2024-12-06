@@ -1,0 +1,41 @@
+/* Tarjeta moderna */
+.modern-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.modern-card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Encabezado */
+.modern-header h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #800020; /* Guindo */
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+
+.modern-header p {
+    font-size: 0.9rem;
+    color: #003366; /* Azul oscuro */
+    margin: 0;
+}
+
+/* Estilo para las secciones */
+.approval-section, .resolution-section {
+    display: flex;
+    align-items: center;
+    width: 48%; /* Distribución equitativa */
+}
+
+/* Contenedor para el PDF */
+.embed-container {
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

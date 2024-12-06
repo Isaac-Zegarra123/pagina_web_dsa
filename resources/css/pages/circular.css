@@ -1,0 +1,308 @@
+/* Contenedor principal para el selector y el año actual */
+.year-selection-container {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  /*background-color: #e8e8e8d6;*/
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 95%;
+  justify-content: space-between; /* Espaciado entre elementos */
+}
+
+/* Selector de año alineado a la izquierda */
+.year-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 200px 0 0;
+}
+
+.year-selector label {
+  font-size: 1.1rem;
+  color: #555;
+  font-weight: 600;
+}
+
+.year-selector select {
+  padding: 10px 35px;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.year-selector select:hover {
+  border-color: #888;
+}
+
+/* Año actual centrado */
+.current-year {
+  text-align: center;
+  flex: 1; /* Toma el espacio necesario para centrar */
+  padding: 0 130px 0 0;
+}
+
+.current-year h2 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.year-indicator {
+  font-size: 1.5rem;
+  color: #fff;
+  background-color: #ab2a2a;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Contenedor principal con fondo y bordes */
+.resolutions-section-title {
+  background-color: #082f47;
+  display: flex;
+  align-items: center;
+  padding: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen del logo a la izquierda */
+.logo_img img {
+  height: 60px;
+  width: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Efecto hover en la imagen */
+.logo_img img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px red);
+}
+
+/* Título de la sección centrado */
+.sub-t {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+}
+
+/* Espacio entre la imagen y el título */
+.me-3 {
+  margin-right: 15px;
+}
+
+
+
+.curricular-container {
+  background-color: #e8e8e8d6;
+  
+  margin: 0 auto;
+  max-width: 1200px;
+}
+  
+  /* Contenedor para hacer scroll horizontal */
+.curricular-menu-container {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto; /* Permite desplazamiento horizontal */
+  scrollbar-width: thin; /* Personaliza el ancho del scroll en Firefox */
+  scrollbar-color: #00060a transparent; /* Colores personalizados para el scroll */
+  padding: 0 20px;
+  width: 100%; /* Ocupa el 100% del ancho disponible */
+}
+
+/* Oculta el scrollbar en navegadores Webkit (Chrome, Safari) */
+.curricular-menu-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.curricular-menu-container::-webkit-scrollbar-thumb {
+  background-color: #164e70;
+  border-radius: 10px;
+}
+
+/* Filtros del menú */
+#curricular-menu-flters {
+  display: flex;
+  flex-wrap: nowrap; /* Evita que los elementos se vayan a la siguiente línea */
+  justify-content: flex-start;
+  padding: 0;
+  margin: 20px 0;
+  list-style: none;
+  border-radius: 50px;
+}
+
+
+#curricular-menu-flters li {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 12px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #fff;
+  margin: 5px;
+  transition: all ease-in-out 0.3s;
+  border-radius: 10px;
+  font-family: "Playfair Display", serif;
+  background-color: #082f47;
+  width: 180px;
+  text-align: center;
+  height: 70px;
+  flex: 0 0 auto; /* Impide que los botones cambien de tamaño o se ajusten al contenedor */
+}
+
+#curricular-menu-flters li:hover,
+#curricular-menu-flters li.filter-active {
+  background-color: #640707c4;
+}
+
+  /* Contenedor de tarjetas */
+  .curricular-menu-curricular-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten a la fila */
+    gap: 20px; /* Espacio entre las tarjetas */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    padding: 20px 0; /* Elimina el padding del contenedor */
+    margin: 0 auto; /* Centra el contenedor */
+  }
+  
+  /* Estilo para las tarjetas */
+  .curricular-menu-item {
+    flex: 1 1 100%; /* Ajusta el ancho de las tarjetas */
+    max-width: 300px; /* Ancho máximo de las tarjetas */
+    margin-bottom: 20px; /* Espacio entre las filas de tarjetas */
+    box-sizing: border-box;
+  }
+  
+  /* Estilos para los elementos de blog */
+  .resolutions-blog-item {
+    position: relative; /*ver*/
+    background-color: #082f47;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    width: 100%;
+    height: 250px; /* Altura fija para uniformidad */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  }
+  
+  .resolutions-blog-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .resolutions-blog-item:hover::before {
+    opacity: 0.9;
+  }
+  
+  /* Imagen de fondo que aparece al pasar el mouse */
+  .resolutions-blog-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../../../public/images/reglamentouatf.png') no-repeat center center/cover;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+  }
+  
+  /* Contenido de los elementos de blog */
+  .resolutions-blog-item h5,
+  .resolutions-blog-item p,
+  .resolutions-blog-item a {
+    position: relative;
+    font-size: 1.5rem;
+    color: #ffffff;
+    z-index: 2;
+    margin: 0;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Recorta el texto si es demasiado largo */
+  }
+  
+  /* Cambiar color de texto a negro cuando se pasa el mouse */
+  .resolutions-blog-item:hover h5,
+  .resolutions-blog-item:hover ul,
+  .resolutions-blog-item:hover p,
+  .resolutions-blog-item:hover a {
+    color: #000000;
+  }
+  
+  .resolutions-blog-item h5 {
+    font-size: 1.5rem;
+  }
+  
+  .resolutions-blog-item ul {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .resolutions-blog-item p {
+    font-size: 1rem;
+  }
+  
+  .resolutions-blog-item a {
+    font-size: 1rem;
+    text-decoration: none;
+  }
+  
+  /* Estilos del botón de descarga */
+  .download-link {
+    display: inline-flex;
+    align-items: center;
+    background-color: #1a557ac4;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    gap: 10px;
+  }
+  
+  .download-link i {
+    font-size: 18px;
+  }
+  
+  .download-link span.arrow_right {
+    margin-left: 10px;
+    transition: margin-left 0.3s ease;
+  }
+  
+  .download-link:hover {
+    background-color: #ab2a2ac4;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+  }
+  
+  .download-link:hover span.arrow_right {
+    margin-left: 15px;
+  }
+  

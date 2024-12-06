@@ -1,0 +1,462 @@
+.sub-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.sub {
+  text-align: center;
+}
+
+.title-cont {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0.5em;
+  background: linear-gradient(45deg,  #800020, #0000FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.3s ease;
+}
+/* Media Queries para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .title-cont {
+      font-size: 2rem; /* Tamaño mediano para tablets */
+      padding: 0.3em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .title-cont {
+      font-size: 1.5rem; /* Tamaño más pequeño para móviles */
+      padding: 0.2em;
+  }
+  
+  .title-cont::after {
+      height: 2px; /* Línea más delgada en móviles */
+  }
+}
+
+
+.title-cont:hover {
+  transform: translateY(-5px);
+}
+
+.title-cont:hover::after {
+  width: 80%;
+}
+
+/* Asegúrate de importar la fuente Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+/*asdasd*/
+:root {
+  --primary-burgundy: #8B0000;   /* Deep burgundy */
+  --dark-blue: #1A2B3C;          /* Rich dark blue */
+  --soft-background: #F5F5F9;    /* Soft light background */
+}
+
+.distritos {
+  background: white;
+  border-radius: 18px;
+  border: 1px solid rgba(139, 0, 0, 0.1);
+  box-shadow: 0 12px 30px rgba(26, 43, 60, 0.08);
+  padding: 30px;
+  margin-bottom: 25px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.distritos::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, var(--primary-burgundy), var(--dark-blue));
+}
+
+.distritos:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 20px 40px rgba(26, 43, 60, 0.12);
+}
+
+.modern-sub-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary-burgundy);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--dark-blue);
+}
+
+p {
+  color: #333;
+  line-height: 1.8;
+  font-weight: 500;
+  margin-top: 15px;
+}
+/*header*/
+.newsletter {
+    width: 100%;
+    height: 350px;
+    background: #6441A5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, hsl(273, 79%, 15%,0.6), hsl(261, 43%, 45%,0.10)), url('../../public/images/psa_graduados.jpg');  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, hsl(273, 79%, 15%,0.30), hsl(261, 43%, 45%,0.10)), url('../../public/images/psa_graduados.jpg'); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+  }
+.mensajes {
+    width: 100%;
+    height: 350px;
+    background: #6441A5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, hsl(273, 79%, 15%,0.6), hsl(261, 43%, 45%,0.10)), url('../../public/images/psa_graduados.jpg');  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, hsl(273, 79%, 15%,0.30), hsl(261, 43%, 45%,0.10)), url('../../public/images/psa_graduados.jpg'); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+  }
+
+
+
+/* Cambio de nombre a content-wrapper */
+.content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 40px;
+  background-color: var(--primary-bg-color);
+  box-shadow: var(--box-shadow);
+}
+
+.item, .item-logo {
+  flex: 1 1 300px;
+  background-color: #0e4b67;
+  color: var(--primary-color);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-10px);
+  box-shadow: var(--hover-shadow);
+}
+
+.item-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0c3a52;
+}
+
+.item-logo img {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 50%;
+  filter: var(--gray-filter);
+  transition: filter 0.3s ease, transform 0.3s ease;
+  box-shadow: var(--box-shadow);
+}
+
+.img:hover {
+  filter: var(--white-filter);
+  transform: scale(1.08);
+  box-shadow: var(--hover-shadow);
+}
+
+.item h3 {
+  font-size: 1.7rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-color);
+}
+
+.newsletter h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.newsletter h4 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.newsletter p {
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--text-color);
+}
+
+/* Responsividad */
+@media (max-width: 1024px) {
+  .content-wrapper {
+      padding: 20px;
+  }
+
+  .item, .item-logo {
+      flex: 1 1 100%;
+  }
+
+  .item {
+      margin-bottom: 20px;
+  }
+
+  .newsletter h2 {
+      font-size: 2rem;
+  }
+
+  .newsletter h4 {
+      font-size: 1.5rem;
+  }
+
+  .newsletter p {
+      font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .item h3 {
+      font-size: 1.2rem;
+  }
+
+  .text {
+      font-size: 0.9rem;
+  }
+
+  .newsletter h2 {
+      font-size: 1.8rem;
+  }
+
+  .newsletter h4 {
+      font-size: 1.3rem;
+  }
+
+  .newsletter p {
+      font-size: 0.85rem;
+  }
+}
+
+  
+  /*carrusel*/
+  .oraganigrama {
+    background-color: #e8e8e8d6;
+    width: 100%;
+    overflow-x: auto;
+    position: relative;
+  }
+  
+  .org-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    min-width: 800px; /* Ancho mínimo para mantener la estructura */
+    position: relative;
+    margin: 0 auto;
+}
+
+.level {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    margin: 12px 0;
+}
+
+.box {
+  padding: 8px;
+  width: 120px;
+  text-align: center;
+  position: relative;
+  font-size: 14px;
+  z-index: 2;
+  color: white;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #17a5a5, #1c6999); /* Degradado de celeste a azul oscuro */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  border: none; /* Sin borde */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Línea central vertical */
+.central-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    background: black;
+    top: 68px;
+    bottom: 243px; /* En lugar de height fija */
+    z-index: 1;
+}
+
+/* Contenedor de grupos laterales */
+.side-container {
+    display: flex;
+    gap: 200px;
+    position: relative;
+}
+
+/* Línea horizontal que conecta grupos laterales */
+.side-container::before {
+    content: "";
+    position: absolute;
+    top: 17%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 2px;
+    background: black;
+    z-index: 1;
+}
+
+/* Grupos laterales */
+.left-group, .right-group {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    position: relative;
+}
+
+/* Líneas verticales para grupos laterales */
+.left-group::after, .right-group::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    height: 65%;
+    width: 2px;
+    background: black;
+    z-index: 1;
+}
+
+/* Contenedor de cajas inferiores */
+.bottom-boxes {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    margin-top: 30px;
+}
+
+/* Línea horizontal superior para cajas inferiores */
+.bottom-boxes::before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: 60px;
+    width: calc(100% - 120px);
+    height: 2px;
+    background: black;
+    z-index: 1;
+}
+
+/* Líneas verticales individuales para cada caja inferior */
+.bottom-box {
+    position: relative;
+}
+
+.bottom-box::before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    height: 30px;
+    width: 2px;
+    background: black;
+    z-index: 1;
+}
+
+/* Línea vertical para la última caja */
+.last-level {
+  justify-content: flex-start;
+  padding-left: 665px; /* Ajustado para alinear con Jefe Bienestar Universitario */
+}
+
+.last-box {
+    position: relative;
+}
+
+.last-box::before {
+    content: "";
+    position: absolute;
+    top: -103px;
+    left: 50%;
+    height: 103px;
+    width: 2px;
+    background: black;
+    z-index: 1;
+}
+
+/* Líneas verticales para conectar niveles */
+.vertical-connector {
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 30px;
+    background: black;
+    z-index: 1;
+}
+
+.connector-down {
+    bottom: -30px;
+}
+
+.connector-up {
+    top: -30px;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 800px) {
+    .oraganigrama {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* Para scroll suave en iOS */
+    }
+
+    .org-chart {
+        padding: 20px 10px;
+        margin: 0;
+    }
+
+    /* Ocultar la barra de desplazamiento en Chrome */
+    .oraganigrama::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Ocultar la barra de desplazamiento en Firefox */
+    .oraganigrama {
+        scrollbar-width: none;
+    }
+    .last-level {
+      padding-left: 400px; /* Ajustado para la versión móvil */
+  }
+}
+
+
+
+
+
+

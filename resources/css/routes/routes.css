@@ -1,0 +1,12 @@
+@import '../app.css';
+@import '../nav.scss';
+@import '../carrusel.css';
+@import '../header.css';
+@import '../admin.css';
+@import '../footer.css';
+@import '../pages/circular.css';
+@import '../pages/resolucion.css';
+@import '../pages/dictamen.css';
+@import '../pages/registercircular.css';
+@import '../organigra/dsa.css';
+@import '../pages/calendar.css';

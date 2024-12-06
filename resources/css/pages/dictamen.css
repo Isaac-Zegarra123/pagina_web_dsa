@@ -1,0 +1,68 @@
+
+.service {
+    background-color: #e9e9e9;
+    margin: 0;
+    padding: 0;
+}
+
+.resoluciones h4 {
+    color: #007bff; /* Color inicial */
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.resoluciones h4:hover {
+    color: #ff6347; /* Color al pasar el mouse */
+}
+
+.resoluciones h1 {
+    color: #000000; /* Color inicial */
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s ease-in-out;
+}
+
+.resoluciones h1:hover {
+    color: #f30404; /* Color al pasar el mouse */
+}
+
+
+
+
+.service .service-item {
+    background: var(--bs-light);
+    border-radius: 10px;
+    transition: 0.5s;
+    background-color: #082f47;
+}
+
+.service .service-item:hover {
+    box-shadow: 0 0 45px rgba(0, 0, 0, .2);
+}
+
+.service .service-item .service-img {
+    position: relative;
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: 0.5s;
+}
+
+.service .service-item .service-img img {
+    transition: 0.5s;
+}
+
+.service .service-item:hover .service-img img {
+    transform: scale(1.2);
+}
+.text-white {
+    color: #ffffff !important;
+}
+
+.download-link {
+    color: #ffffff;
+    /* Otros estilos que desees agregar */
+}

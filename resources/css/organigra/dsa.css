@@ -1,0 +1,130 @@
+:root {
+    --primary-blue: #003366; /* Azul oscuro */
+    --secondary-blue: #0056b3;
+    --burgundy: #800020; /* Guindo */
+    --light-burgundy: #a3062a;
+    --gray: #4a4a4a;
+    --light-gray: #f5f5f5;
+    --ultra-light-blue: #eef6fa; /* Azul claro */
+    --gradient-bg: linear-gradient(135deg, var(--burgundy) 40%, var(--ultra-light-blue) 100%);
+}
+/* Mejoras en animaciones globales */
+@keyframes floatEnhanced {
+    0% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-15px) rotate(2deg); }
+    75% { transform: translateY(15px) rotate(-2deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+@keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+}
+
+/* Fondo general con degradado */
+.cuerpo {
+    max-width: 1200px; /* Límite máximo de ancho */
+    margin: 0 auto; /* Centra el contenido horizontalmente */
+    padding: 0 20px; /* Reduce el padding para pantallas pequeñas */
+    position: relative;
+}
+
+.cuerpo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, 
+        var(--burgundy), 
+        var(--primary-blue), 
+        var(--gray),
+        var(--burgundy)
+    );
+    background-size: 300% 100%;
+    animation: gradient 6s linear infinite;
+}
+
+/* Imagen dinámica con bordes redondeados */
+.img-fluid {
+    height: 100%;
+    width: 380px; /* Mantiene la proporción de la imagen */
+    border-radius: 30px;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.15),
+        0 0 0 10px rgba(128, 0, 32, 0.1),
+        0 0 0 20px rgba(0, 51, 102, 0.05);
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    animation: floatEnhanced 8s ease-in-out infinite;
+}
+
+.img-fluid:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.2),
+        0 0 0 15px rgba(128, 0, 32, 0.15),
+        0 0 0 30px rgba(0, 51, 102, 0.1);
+}
+
+/* Títulos */
+.sentral-title {
+    font-size: 2.2rem;
+    background: linear-gradient(45deg, var(--burgundy), var(--primary-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.sentral-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--burgundy), var(--primary-blue));
+    border-radius: 2px;
+}
+
+/* Lista de información */
+.about-info li {
+    display: flex;
+    padding: 10px;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, white, var(--light-gray));
+    border-radius: 15px;
+    border-left: 5px solid var(--burgundy);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+}
+
+.about-info li:hover {
+    transform: translateX(10px) translateY(-5px);
+    background: white;
+    border-left-color: var(--primary-blue);
+    box-shadow: 
+        0 10px 20px rgba(0, 0, 0, 0.1),
+        0 0 0 5px rgba(0, 51, 102, 0.05);
+}
+p {
+    text-align: justify;
+}
+
+/* Mejoras responsive */
+@media (max-width: 992px) {
+    .cuerpo {
+        padding: 40px 20px;
+    }
+    
+    .img-fluid {
+        margin-bottom: 40px;
+    }
+    
+    .about-info li {
+        flex-direction: column;
+        padding: 15px;
+    }
+}

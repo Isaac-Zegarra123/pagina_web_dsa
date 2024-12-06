@@ -1,0 +1,151 @@
+.lorg {
+    background-color: #082f47; /* Azul oscuro */
+    padding: 5px 25px; /* Espaciado alrededor de la imagen */
+    display: inline-block; /* Asegura que el tamaño se ajuste al contenido */
+}
+.card {
+    width: 100%; /* O el tamaño que quieras */
+    max-width: 600px; /* Límite máximo opcional */
+    margin: auto; /* Centrar la tarjeta */
+}
+
+/* Contenedor principal */
+.custom-container {
+    width: 100%;
+    max-width: 1200px; /* Opcional: Límite de ancho */
+    margin: 0 auto; /* Centrado */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espaciado consistente */
+    justify-content: center; /* Centrar las tarjetas */
+}
+
+
+/* Estilo de cada tarjeta */
+.convocatoria-item {
+    width: 88%; /* Haz que la imagen sea más pequeña */
+    height: auto; /* Mantén la proporción de la imagen */
+    margin: 0 auto; /* Centra la imagen dentro del contenedor */
+    display: block; /* Asegura que se centre */
+    border-radius: 5px; /* Opcional: redondea las esquinas */
+    
+}
+
+
+
+.convocatoria-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Título de la convocatoria */
+.convocatoria-title {
+    background-color: #082f47;
+    text-align: center;
+    height: 100px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.convocatoria-title a {
+    color: #ffffff;
+    font-size: clamp(12px, 1.5vw, 16px);
+    text-decoration: none;
+    white-space: normal;
+    word-wrap: break-word;
+    width: 100%;
+}
+
+/* Contenido de la convocatoria */
+.convocatoria-content {
+    background-color: #082f47;
+    padding: 10px;
+}
+
+/* Botones */
+.btn-outline-light {
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Responsividad para dispositivos móviles */
+@media (max-width: 768px) {
+    .convocatoria-item {
+        flex: 1 1 calc(50% - 10px); /* Dos tarjetas por fila */
+    }
+}
+
+@media (max-width: 576px) {
+    .convocatoria-item {
+        flex: 1 1 100%; /* Una tarjeta por fila */
+    }
+}
+
+/*paginacion*/
+/* Estilos para la paginación */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+/* Estilo para los elementos de la paginación */
+.pagination .page-item {
+    margin: 0 5px;
+}
+
+/* Estilo para los enlaces de la paginación */
+.pagination .page-link {
+    background-color: #082f47; /* Azul oscuro */
+    color: #ffffff; /* Texto blanco */
+    border: 2px solid #082f47; /* Borde azul oscuro */
+    border-radius: 25px;
+    padding: 8px 15px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* Hover sobre el enlace */
+.pagination .page-link:hover,
+.pagination .page-link:focus {
+    background-color: #b50000; /* Guindo */
+    border-color: #b50000; /* Borde guindo */
+    color: #ffffff; /* Mantener el texto blanco */
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+/* Estilo para el enlace activo */
+.pagination .page-item.active .page-link {
+    background-color: #b50000; /* Guindo */
+    border-color: #b50000; /* Borde guindo */
+    color: #ffffff; /* Texto blanco */
+    font-weight: bold;
+}
+
+/* Estilo para los enlaces deshabilitados */
+.pagination .page-item.disabled .page-link {
+    background-color: #e0e0e0; /* Color gris claro para deshabilitado */
+    border-color: #e0e0e0;
+    color: #9e9e9e;
+    cursor: not-allowed;
+}
+
+/* Estilo responsive para pantallas pequeñas */
+@media (max-width: 576px) {
+    .pagination .page-link {
+        font-size: 0.875rem; /* Texto más pequeño en dispositivos móviles */
+        padding: 6px 12px; /* Ajustar el tamaño de los botones */
+    }
+}

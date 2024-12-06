@@ -1,0 +1,117 @@
+.carousel-header .carousel-inner .carousel-item img {
+    width: 100%;
+    height: 600px; /* Altura fija en pantallas grandes */
+    object-fit: cover; /* Ajuste uniforme de las imágenes */
+}
+
+/* Fondo negro transparente para el texto */
+.carousel-header .carousel-inner .carousel-item .carousel-caption {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6); /* Negro transparente */
+    padding: 20px;
+}
+
+/* Título del carrusel */
+.carousel-header .carousel-caption h1 {
+    font-size: 2.5rem; /* Tamaño para escritorio */
+    color: white;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
+}
+
+/* Descripción del carrusel */
+.carousel-header .carousel-caption p {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Botón del carrusel */
+.carousel-header .carousel-caption .btn {
+    font-size: 1rem;
+    padding: 10px 25px;
+    color: white;
+    background: linear-gradient(45deg, #800020, #0000FF); /* Guindo y azul */
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+.carousel-header .carousel-caption .btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(128, 0, 32, 0.7); /* Resplandor guindo */
+}
+
+/* Indicadores del carrusel */
+.carousel-header .carousel-indicators li {
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 0 5px;
+    opacity: 0.8;
+}
+
+.carousel-header .carousel-indicators li.active {
+    background-color: #800020; /* Guindo para el activo */
+    opacity: 1;
+}
+
+/*** Ajustes Responsivos ***/
+@media (max-width: 768px) {
+    /* Imágenes en móviles */
+    .carousel-header .carousel-inner .carousel-item img {
+        height: 30vh; /* Mitad de la pantalla en móviles */
+    }
+
+    /* Fondo del texto */
+    .carousel-header .carousel-caption {
+        background: rgba(0, 0, 0, 0.7); /* Más oscuro en móviles */
+    }
+
+    /* Títulos más pequeños */
+    .carousel-header .carousel-caption h1 {
+        font-size: 1.5rem;
+    }
+
+    /* Texto descriptivo más pequeño */
+    .carousel-header .carousel-caption p {
+        font-size: 1rem;
+    }
+
+    /* Botón más pequeño */
+    .carousel-header .carousel-caption .btn {
+        font-size: 0.9rem;
+        padding: 8px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajuste adicional para dispositivos pequeños */
+    .carousel-header .carousel-inner .carousel-item img {
+        height: 40vh; /* Más pequeño en pantallas muy pequeñas */
+    }
+
+    .carousel-header .carousel-caption h1 {
+        font-size: 1.2rem; /* Texto más pequeño */
+    }
+
+    .carousel-header .carousel-caption p {
+        font-size: 0.8rem;
+    }
+
+    .carousel-header .carousel-caption .btn {
+        font-size: 0.8rem;
+        padding: 6px 15px;
+    }
+}
