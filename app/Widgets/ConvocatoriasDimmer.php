@@ -2,9 +2,8 @@
 
 namespace App\Widgets;
 
-use Arrilot\Widgets\AbstractWidget;
 use App\Models\Convocatoria;
-use TCG\Voyager\Facades\Voyager;
+use Arrilot\Widgets\AbstractWidget;
 
 class ConvocatoriasDimmer extends AbstractWidget
 {
@@ -26,9 +25,9 @@ class ConvocatoriasDimmer extends AbstractWidget
         $string = 'Convocatorias';
 
         return view('voyager::dimmer', array_merge($this->config, [
-            'icon'   => 'voyager-news', // Cambia el ícono si deseas
-            'title'  => "{$count} {$string}",
-            'text'   => "Tienes {$count} convocatorias en tu base de datos.",
+            'icon' => 'voyager-news', // Cambia el ícono si deseas
+            'title' => "{$count} {$string}",
+            'text' => "Tienes {$count} convocatorias en tu base de datos.",
             'button' => [
                 'text' => 'Ver todas las convocatorias',
                 'link' => route('voyager.convocatorias.index'),

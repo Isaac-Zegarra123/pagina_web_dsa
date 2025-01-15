@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Resolucione;
-use App\Models\Year;
 use Illuminate\Http\Request;
-
 
 class ResolucionController extends Controller
 {

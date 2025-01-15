@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\DCurricular;
-use App\Models\Year;
 use Illuminate\Http\Request;
 
 class DCurricularController extends Controller
@@ -41,5 +40,5 @@ class DCurricularController extends Controller
         }
 
         return redirect()->back()->with('error', 'El archivo no se encontró.');
-    }    
+    }
 }

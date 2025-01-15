@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade as PDF;
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class PDFReporteController extends Controller
 {
     public function generarReporte($tabla)
     {
         // Verifica si la tabla existe en la base de datos
-        if (!Schema::hasTable($tabla)) {
+        if (! Schema::hasTable($tabla)) {
             abort(404, 'La tabla no existe');
         }
 

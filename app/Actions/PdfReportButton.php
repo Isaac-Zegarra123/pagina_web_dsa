@@ -20,7 +20,7 @@ class PdfReportButton extends AbstractAction
     {
         return [
             'class' => 'btn btn-primary',
-            'target' => '_blank'
+            'target' => '_blank',
         ];
     }
 
@@ -33,7 +33,7 @@ class PdfReportButton extends AbstractAction
     {
         // Mostrar la acción solo en las tablas que especificaste
         return in_array($this->dataType->slug, [
-            'convocatorias', 'circulares', 'dictamenes', 'resoluciones', 'diseño-curricular'
+            'convocatorias', 'circulares', 'dictamenes', 'resoluciones', 'diseño-curricular',
         ]);
     }
 }

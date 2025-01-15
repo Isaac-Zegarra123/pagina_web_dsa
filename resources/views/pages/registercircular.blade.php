@@ -50,7 +50,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse($registro_curricular as $registrocurricular)
+                        @forelse($registroCurricular as $registrocurricular)
                         <tr class="uatf-table-row">
                             <td class="uatf-table-cell">{{ $registrocurricular->no }}</td>
                             <td class="uatf-table-cell">{{ $registrocurricular->uni }}</td>

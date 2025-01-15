@@ -2,10 +2,9 @@
 
 namespace App\Providers;
 
-use App\Actions\PdfReportButton;
+use App\Widgets\ConvocatoriasDimmer;
 use Illuminate\Support\ServiceProvider;
 use TCG\Voyager\Facades\Voyager;
-use App\Widgets\ConvocatoriasDimmer;
 
 class VoyagerServiceProvider extends ServiceProvider
 {

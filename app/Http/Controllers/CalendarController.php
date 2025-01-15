@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Calendario;
 use Illuminate\Http\Request;
-use App\Models\Calendario; // Usa el nombre correcto del modelo
-use App\Models\Year;
+
+// Usa el nombre correcto del modelo
 
 class CalendarController extends Controller
 {
@@ -42,22 +43,22 @@ class CalendarController extends Controller
 
         return redirect()->back()->with('error', 'El archivo no se encontró.');
     }
+
     public function showPdf($id)
-{
-    // Encuentra el calendario por ID
-    $calendar = Calendario::findOrFail($id);
+    {
+        // Encuentra el calendario por ID
+        $calendar = Calendario::findOrFail($id);
 
-    // Construye la ruta al archivo PDF
-    $filePath = storage_path('app/public/' . $calendar->file_path);
+        // Construye la ruta al archivo PDF
+        $filePath = storage_path('app/public/' . $calendar->file_path);
 
-    if (file_exists($filePath)) {
-        return response()->file($filePath, [
-            'Content-Type' => 'application/pdf', // Especifica el tipo MIME
-            'Content-Disposition' => 'inline', // Asegura que se muestre en el navegador
-        ]);
+        if (file_exists($filePath)) {
+            return response()->file($filePath, [
+                'Content-Type' => 'application/pdf', // Especifica el tipo MIME
+                'Content-Disposition' => 'inline', // Asegura que se muestre en el navegador
+            ]);
+        }
+
+        return redirect()->back()->with('error', 'El archivo no se encontró.');
     }
-
-    return redirect()->back()->with('error', 'El archivo no se encontró.');
-}
-
 }

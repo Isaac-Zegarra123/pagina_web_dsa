@@ -1,27 +1,25 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ConvocatoriaController;
-use App\Http\Controllers\YearController;
-use App\Http\Controllers\CircularController;
-use App\Http\Controllers\ResolucionController;
-use App\Http\Controllers\DictamenController;
-use App\Http\Controllers\DCurricularController;
-use App\Http\Controllers\CarouselController;
-use App\Http\Controllers\DsaController;
-use App\Http\Controllers\BibliotecaController;
-use App\Http\Controllers\CordinadorAcdemicController;
-use App\Http\Controllers\RegistroController;
-use App\Http\Controllers\TecnicoController;
-use App\Http\Controllers\SecretariaController;
-use App\Http\Controllers\MensajeroController;
-use App\Http\Controllers\BienestarUniversitarioController;
-use App\Http\Controllers\GestionCurricularController;
 use App\Http\Controllers\AlbergueUniversitarioController;
-use App\Http\Controllers\ReporteController;
-use App\Http\Controllers\Registro_CurricularController;
+use App\Http\Controllers\BibliotecaController;
+use App\Http\Controllers\BienestarUniversitarioController;
 use App\Http\Controllers\CalendarController;
-
+use App\Http\Controllers\CarouselController;
+use App\Http\Controllers\CircularController;
+use App\Http\Controllers\ConvocatoriaController;
+use App\Http\Controllers\CordinadorAcdemicController;
+use App\Http\Controllers\DCurricularController;
+use App\Http\Controllers\DictamenController;
+use App\Http\Controllers\DsaController;
+use App\Http\Controllers\GestionCurricularController;
+use App\Http\Controllers\MensajeroController;
+use App\Http\Controllers\RegistroCurricularController;
+use App\Http\Controllers\RegistroController;
+use App\Http\Controllers\ReporteController;
+use App\Http\Controllers\ResolucionController;
+use App\Http\Controllers\SecretariaController;
+use App\Http\Controllers\TecnicoController;
+use Illuminate\Support\Facades\Route;
 
 /*Route::get('/', function () {
     return view('welcome');
@@ -32,8 +30,7 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-
-/*----------pages------------*/
+/* ----------pages------------ */
 Route::get('/resolutions', function () {
     return view('pages.resolutions');
 })->name('resolutions');
@@ -54,9 +51,7 @@ Route::get('/reglamentos', function () {
     return view('pages.regulations.reglamentos');
 })->name('reglamentos');
 
-
-
-/*-----------organigrama------------------*/
+/* -----------organigrama------------------ */
 
 Route::view('/servi_academ', 'organigra.servi_academ')->name('servi_academ');
 Route::view('/cordinador', 'organigra.cordinador')->name('cordinador');
@@ -69,8 +64,7 @@ Route::view('/mensajero', 'organigra.mensajero')->name('mensajero');
 Route::view('/secretaria', 'organigra.secretaria')->name('secretaria');
 Route::view('/tecnico', 'organigra.tecnico')->name('tecnico');
 
-
-//------------------------------------
+// ------------------------------------
 Route::get('/circulars', function () {
     return view('pages.circulars');
 })->name('circulars');
@@ -94,16 +88,14 @@ Route::get('/bienestar', [BienestarUniversitarioController::class, 'index'])->na
 Route::get('/gestion', [GestionCurricularController::class, 'index'])->name('gestion');
 Route::get('/encargado', [AlbergueUniversitarioController::class, 'index'])->name('encargado');
 
-
 Route::get('/circulars/{year?}', [CircularController::class, 'index'])->name('pages.circulars');
 Route::get('/resolutions/{year?}', [ResolucionController::class, 'index'])->name('pages.resolutions');
 Route::get('/curricular/{year?}', [DCurricularController::class, 'index'])->name('pages.curricular');
 Route::get('/commission/{year?}', [DictamenController::class, 'index'])->name('pages.commission');
 Route::get('/calendar/{year?}', [CalendarController::class, 'index'])->name('pages.calendar');
-/*reportes*/
+/* reportes */
 
 Route::get('admin/reporte-pdf/{slug}', [ReporteController::class, 'generatePdf'])->name('reporte.pdf');
-Route::get('/registercircular', [Registro_CurricularController::class, 'index'])->name('registercircular');
+Route::get('/registercircular', [RegistroCurricularController::class, 'index'])->name('registercircular');
 
 require __DIR__.'/auth.php';
-

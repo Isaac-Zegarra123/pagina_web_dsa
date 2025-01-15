@@ -32,7 +32,7 @@ class CircularController extends Controller
                 $imagePath = 'images/circular/' . basename($archivo[0]['download_link'], '.pdf') . '.jpg';
 
                 // Verificar si la imagen ya existe, si no, convertir el PDF en imagen
-                if (!Storage::exists('public/' . $imagePath)) {
+                if (! Storage::exists('public/' . $imagePath)) {
                     $this->convertPdfToImage($pdfPath, storage_path('app/public/' . $imagePath));
                 }
 

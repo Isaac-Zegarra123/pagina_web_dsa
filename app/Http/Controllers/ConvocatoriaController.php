@@ -2,24 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Convocatoria;
 use App\Models\Carrusel;
-use Barryvdh\DomPDF\Facade as PDF;
-use Imagick;
+use App\Models\Convocatoria;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Imagick;
 
 class ConvocatoriaController extends Controller
 {
-     // Método para mostrar las convocatorias
-     public function index(Request $request)
-     {
-         // Obtener todas las convocatorias de la base de datos
-         $convocatorias = Convocatoria::orderBy('created_at', 'desc')->paginate(8);
-        
-         // Obtener todas las imágenes del carrusel de la base de datos
-        $carousels = Carrusel::all();
+    // Método para mostrar las convocatorias
+    public function index(Request $request)
+    {
+        // Obtener todas las convocatorias de la base de datos
+        $convocatorias = Convocatoria::orderBy('created_at', 'desc')->paginate(8);
 
+        // Obtener todas las imágenes del carrusel de la base de datos
+        $carousels = Carrusel::all();
 
         foreach ($convocatorias as $convocatoria) {
             $archivo = json_decode($convocatoria->archivo, true);
@@ -27,7 +25,7 @@ class ConvocatoriaController extends Controller
                 $pdfPath = storage_path('app/public/' . $archivo[0]['download_link']);
                 $imagePath = 'images/convocatorias/' . basename($archivo[0]['download_link'], '.pdf') . '.jpg';
 
-                if (!Storage::exists('public/' . $imagePath)) {
+                if (! Storage::exists('public/' . $imagePath)) {
                     $this->convertPdfToImage($pdfPath, storage_path('app/public/' . $imagePath));
                 }
 
@@ -37,13 +35,14 @@ class ConvocatoriaController extends Controller
             }
         }
 
-
         if ($request->ajax()) {
             return view('partials.convocatorias', compact('convocatorias'))->render();
         }
+
         // Pasar las convocatorias y el carrusel a la vista
         return view('welcome', compact('convocatorias', 'carousels'));
     }
+
     private function convertPdfToImage($pdfPath, $imagePath)
     {
         try {
@@ -58,5 +57,4 @@ class ConvocatoriaController extends Controller
             \Log::error('Error converting PDF to image: ' . $e->getMessage());
         }
     }
-
 }

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dictamen;
-use App\Models\Year;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Imagick;
@@ -33,7 +32,7 @@ class DictamenController extends Controller
                 $imagePath = 'images/dictamen/' . basename($archivo[0]['download_link'], '.pdf') . '.jpg';
 
                 // Verificar si la imagen ya existe, si no, convertir el PDF en imagen
-                if (!Storage::exists('public/' . $imagePath)) {
+                if (! Storage::exists('public/' . $imagePath)) {
                     $this->convertPdfToImage($pdfPath, storage_path('app/public/' . $imagePath));
                 }
 
@@ -52,7 +51,6 @@ class DictamenController extends Controller
         // Pasar los datos a la vista completa
         return view('pages.commission', compact('dictamenes', 'years', 'currentYear'));
     }
-
 
     private function convertPdfToImage($pdfPath, $imagePath)
     {

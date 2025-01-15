@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Barryvdh\DomPDF\Facade\Pdf;
- // Verifica que esta línea esté bien
-use App\Models\Convocatoria; 
 use App\Models\Circular;
+// Verifica que esta línea esté bien
+use App\Models\Convocatoria;
+use App\Models\DCurricular;
 use App\Models\Dictamen;
 use App\Models\Resolucione;
-use App\Models\DCurricular;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class ReporteController extends Controller
 {
@@ -25,7 +24,7 @@ class ReporteController extends Controller
         ];
 
         // Verifica que el slug proporcionado tenga un modelo asociado
-        if (!isset($models[$slug])) {
+        if (! isset($models[$slug])) {
             abort(404, 'Modelo no encontrado');
         }
 
